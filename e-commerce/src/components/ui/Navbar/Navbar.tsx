@@ -27,7 +27,7 @@ export default function Navbar() {
         <nav className="bg-white shadow py-4">
             <div className="container mx-auto  font-semibold flex flex-col md:flex-row items-start md:items-center ps-4 md:ps-0 justify-between">
                 <h2 className="text-2xl">
-                    <Link href={'/'}>Shop Mart</Link>
+                    <Link href={'/'}>ShopMart</Link>
                 </h2>
                 <div className="">
                     <NavigationMenu>
