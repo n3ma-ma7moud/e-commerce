@@ -9,13 +9,23 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { ShoppingCartIcon } from 'lucide-react'
+import { ShoppingCartIcon, UserIcon } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 
 export default function Navbar() {
     return (
         <nav className="bg-white shadow py-4">
-            <div className="container mx-auto  font-semibold flex items-center justify-between">
+            <div className="container mx-auto  font-semibold flex flex-col md:flex-row items-start md:items-center ps-4 md:ps-0 justify-between">
                 <h2 className="text-2xl">
                     <Link href={'/'}>Shopmart</Link>
                 </h2>
@@ -45,12 +55,37 @@ export default function Navbar() {
                 <div className="">
                     <NavigationMenu>
                         <NavigationMenuList>
-                    <NavigationMenuItem >
-                        <NavigationMenuLink asChild >
-                            <Link href="/cart"><ShoppingCartIcon className='size-6 text-inherit'  /></Link>
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    </NavigationMenuList>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <UserIcon className='size-6' />
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                    <DropdownMenuGroup>
+                                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                        <Link href="/profile">
+                                            <DropdownMenuItem>Profile</DropdownMenuItem>
+                                        </Link>
+                                        <Link href="/my-orders">
+                                            <DropdownMenuItem>My Orders</DropdownMenuItem>
+                                        </Link>
+                                        <Link href="/login">
+                                            <DropdownMenuItem>Login</DropdownMenuItem>
+                                        </Link>
+                                        <Link href="/register">
+                                            <DropdownMenuItem>Register</DropdownMenuItem>
+                                        </Link>
+                                        
+                                    </DropdownMenuGroup>
+                                    <DropdownMenuSeparator />
+
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                            <NavigationMenuItem >
+                                <NavigationMenuLink asChild >
+                                    <Link href="/cart"><ShoppingCartIcon className='size-6 text-inherit' /></Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        </NavigationMenuList>
                     </NavigationMenu>
                 </div>
             </div>
