@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Star, StarHalf } from 'lucide-react';
 
 export default async function products() {
   const response = await fetch ('https://ecommerce.routemisr.com/api/v1/products');
@@ -19,20 +20,28 @@ export default async function products() {
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
     {data.data.map((product) => (
       <div key={product._id} className=" p-2 rounded-lg ">
-        <Card>
-        <div className="-m-3">
-          <img src ={product.imageCover} alt={product.title} width={200} height={150} className="w-full" />
-        </div>
+        <Card className="overflow-hidden pt-0">
+         <div className="-m-1 -mt-6">
+          <img src ={product.imageCover} alt={product.title} width={200} height={150} className="relative z-20  w-full object-cover  " />
+        </div> 
+         
   <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-    <CardAction>Card Action</CardAction>
+     <CardDescription>{product.brand.name}</CardDescription>
+    <CardTitle>{product.title}</CardTitle>
+    <CardDescription>{product.category.name}</CardDescription>
   </CardHeader>
   <CardContent>
-    <p>Card Content</p>
+    <div className="flex gap-2">
+      <Star className="text-amber-400 fill-amber-400" fill="true" />
+      <Star className="text-amber-400 fill-amber-400" fill="true" />
+      <Star className="text-amber-400 fill-amber-400" fill="true" />
+      <Star className="text-amber-400 fill-amber-400" fill="true" />
+      <StarHalf className="text-amber-400 fill-amber-400" fill="true" />
+    </div>
+    <p>{product.ratingsAverage}</p>
   </CardContent>
   <CardFooter>
-    <p>Card Footer</p>
+    <p>{product.price} EGP</p>
   </CardFooter>
 </Card>
       </div>
