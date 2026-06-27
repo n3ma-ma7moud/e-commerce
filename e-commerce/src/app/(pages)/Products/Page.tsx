@@ -7,8 +7,13 @@ export default async function products() {
   return <>
   <h2>Products</h2>
   
+<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {data.data.map((product) => (
+      <div key={product._id} className=" p-2 rounded-lg ">
+        <h2>{product.title}</h2>
+      </div>
+    ))}
+  </div>
 
-
-  
   </>
 }
