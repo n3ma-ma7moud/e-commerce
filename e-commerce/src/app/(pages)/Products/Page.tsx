@@ -20,7 +20,7 @@ export default async function products() {
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
     {data.data.map((product) => (
       <div key={product._id} className=" p-2 rounded-lg ">
-        <Card className="overflow-hidden pt-0">
+        <Card className="overflow-hidden pt-0 h-full flex flex-col  ">
          <div className="-m-1 -mt-6">
           <img src ={product.imageCover} alt={product.title} width={200} height={150} className="relative z-20  w-full object-cover  " />
         </div> 
@@ -30,7 +30,7 @@ export default async function products() {
     <CardTitle>{product.title}</CardTitle>
     <CardDescription>{product.category.name}</CardDescription>
   </CardHeader>
-  <CardContent>
+  <CardContent className="flex-1">
     <div className="flex gap-2">
       <Star className="text-amber-400 fill-amber-400" fill="true" />
       <Star className="text-amber-400 fill-amber-400" fill="true" />
@@ -41,7 +41,7 @@ export default async function products() {
     <p>{product.ratingsAverage}</p>
     <p>{product.price} EGP</p>
   </CardContent>
-  <CardFooter className=" gap-2">
+  <CardFooter className=" gap-2 mt-auto">
     <button className="grow">Add To Cart</button>
     <Heart/>
   </CardFooter>
