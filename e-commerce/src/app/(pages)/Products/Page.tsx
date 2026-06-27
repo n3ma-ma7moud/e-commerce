@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Star, StarHalf } from 'lucide-react';
+import { Heart, Star, StarHalf } from 'lucide-react';
 
 export default async function products() {
   const response = await fetch ('https://ecommerce.routemisr.com/api/v1/products');
@@ -39,9 +39,11 @@ export default async function products() {
       <StarHalf className="text-amber-400 fill-amber-400" fill="true" />
     </div>
     <p>{product.ratingsAverage}</p>
-  </CardContent>
-  <CardFooter>
     <p>{product.price} EGP</p>
+  </CardContent>
+  <CardFooter className=" gap-2">
+    <button className="grow">Add To Cart</button>
+    <Heart/>
   </CardFooter>
 </Card>
       </div>
