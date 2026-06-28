@@ -28,7 +28,7 @@ export default async function products() {
          
   <CardHeader>
      <CardDescription>{product.brand.name}</CardDescription>
-    <CardTitle>{product.title}</CardTitle>
+    <CardTitle className="line-clamp-1">{product.title}</CardTitle>
     <CardDescription>{product.category.name}</CardDescription>
   </CardHeader>
   <CardContent className="flex-1">
