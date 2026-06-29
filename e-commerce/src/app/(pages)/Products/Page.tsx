@@ -26,7 +26,7 @@ export default async function products() {
           <img src ={product.imageCover} alt={product.title} width={200} height={150} className="relative z-20  w-full object-cover  " />
         </div> 
          
-  <CardHeader>
+  <CardHeader className="-mt-3">
      <CardDescription>{product.brand.name}</CardDescription>
     <CardTitle className="line-clamp-1">{product.title}</CardTitle>
     <CardDescription>{product.category.name}</CardDescription>
