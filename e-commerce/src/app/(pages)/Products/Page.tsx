@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Heart, Star, StarHalf } from 'lucide-react';
+import { Heart, Link, Star, StarHalf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default async function products() {
@@ -22,6 +22,7 @@ export default async function products() {
     {data.data.map((product) => (
       <div key={product._id} className=" p-2 rounded-lg ">
         <Card className="overflow-hidden pt-0 h-full flex flex-col  ">
+   <Link href={'/products/'+product.id}>
          <div className="-m-1 -mt-6">
           <img src ={product.imageCover} alt={product.title} width={200} height={150} className="relative z-20  w-full object-cover  " />
         </div> 
@@ -42,6 +43,7 @@ export default async function products() {
     <p>{product.ratingsAverage}</p>
     <p>{product.price} EGP</p>
   </CardContent>
+   </Link>
   <CardFooter className=" gap-2 mt-auto">
     <Button className="grow">Add To Cart</Button>
     <Heart/>
