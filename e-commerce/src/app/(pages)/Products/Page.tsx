@@ -38,7 +38,7 @@ export default async function Products() {
                   />
                 </div>
 
-                <CardHeader className="-mt-3">
+                <CardHeader className="mt-2">
                   <CardDescription>{product.brand.name}</CardDescription>
                   <CardTitle className="line-clamp-1">{product.title}</CardTitle>
                   <CardDescription>{product.category.name}</CardDescription>
