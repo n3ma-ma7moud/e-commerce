@@ -1,7 +1,7 @@
 export interface ProductsResponse {
   results: number
   metadata: Metadata
-  data: Products[]
+  data: Product[]
 }
 
 export interface Metadata {
@@ -11,7 +11,7 @@ export interface Metadata {
   nextPage: number
 }
 
-export interface Products {
+export interface Product {
   sold: number
   images: string[]
   subcategory: Subcategory[]
